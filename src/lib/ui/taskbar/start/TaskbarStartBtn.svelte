@@ -25,7 +25,7 @@
 </script>
 
 <Button bind:active bind:ref={start} onclick={() => updatePosition()}>
-	<img src="win95-logo.png" alt="logo" class="absolute top-[2px] left-[3px] h-[1.2rem]" />
+	<img src="win95-logo.png" alt="logo" height="19" class="absolute top-[2px] left-[3px] max-w-[19px]" />
 	<span class="ml-6"> {m.start()} </span>
 </Button>
 
