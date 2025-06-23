@@ -5,7 +5,8 @@ const config = {
 	kit: {
 		paths: { base: '/portfolio' },
 		adapter: adapter({
-			fallback: 'index.html'
+			fallback: 'index.html',
+			precompress: true
 		})
 	}
 };
