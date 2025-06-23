@@ -1,4 +1,8 @@
 {
 	"$schema": "https://inlang.com/schema/inlang-message-format",
-	"hello_world": "Hello, {name} from it!"
+	"hello_world": "Hello, {name} from it!",
+	"title": "Giorgio Dodesini | Portfolio It",
+	"start": "Avvio",
+	"currentLocale": "It",
+	"shutDown": "Chiudi sessione..."
 }
