@@ -50,7 +50,7 @@
 				icon="start-menu-icons/shut_down_normal-3.png"
 				iconAlt="Shutdown icon"
 				text={m.shutDown()}
-				onclick={() => appState.isShuttedDown = true}
+				onclick={() => appState.isShuttingDown = true}
 			/>
 		</div>
 	</div>

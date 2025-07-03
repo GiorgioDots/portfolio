@@ -16,10 +16,10 @@
 		}
 	});
 	$effect(() => {
-		if (appLoaded && !appState.isShuttedDown) {
+		if (appLoaded && !appState.isShuttingDown) {
 			localStorage.setItem('last_access', new Date().getTime().toString());
 		}
-		if (appState.isShuttedDown) {
+		if (appState.isShuttingDown) {
 			setTimeout(
 				() => {
 					localStorage.removeItem('last_access');

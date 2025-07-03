@@ -1,3 +1,3 @@
 export const appState = $state({
-    isShuttedDown: false
+    isShuttingDown: false
 })
