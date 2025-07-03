@@ -27,7 +27,7 @@
 }
 
 html {
-	@apply bg-w95-bg h-dvh text-sm;
+	@apply h-dvh text-sm;
 }
 
 body {

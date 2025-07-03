@@ -3,6 +3,7 @@
 	import Desktop from '$lib/ui/Desktop.svelte';
 	import LoadingScreen from '$lib/ui/loading/LoadingScreen.svelte';
 	import TaskBar from '$lib/ui/taskbar/Taskbar.svelte';
+	import { cn } from '$lib/utils/cn';
 	import { randomNumber } from '$lib/utils/random';
 
 	let appLoaded = $state(false);
@@ -31,14 +32,14 @@
 	});
 </script>
 
-<div class="flex h-dvh flex-col">
+<div class={cn('flex h-dvh flex-col', appLoaded && !isShuttedDown ? 'bg-w95-bg' : 'bg-black')}>
 	{#if appLoaded && !isShuttedDown}
 		<Desktop />
 		<TaskBar />
 	{:else if !appLoaded && !isShuttedDown}
 		<LoadingScreen onLoaded={() => (appLoaded = true)} />
 	{:else}
-		<div class="text-loading-screen-foreground h-full bg-black">
+		<div class="text-loading-screen-foreground h-full">
 			<div>Thanks for visiting!</div>
 			<div>Refresh the page to reload the application</div>
 		</div>

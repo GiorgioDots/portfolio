@@ -53,7 +53,7 @@
 
 <main
 	class={cn(
-		'text-loading-screen-foreground h-full bg-black',
+		'text-loading-screen-foreground h-full ',
 		booted ? 'flex items-center justify-center p-8' : ''
 	)}
 >
