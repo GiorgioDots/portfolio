@@ -65,6 +65,6 @@
 			<div class="mt-8">{blinkTxt}</div>
 		{/if}
 	{:else}
-		<img src="loading-screen.gif" alt="Loading screen" />
+		<img src="loading-screen.gif" alt="Loading screen" class="pointer-events-none" />
 	{/if}
 </main>
