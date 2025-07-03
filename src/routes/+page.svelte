@@ -31,7 +31,7 @@
 	});
 </script>
 
-<div class="flex h-full flex-col">
+<div class="flex h-dvh flex-col">
 	{#if appLoaded && !isShuttedDown}
 		<Desktop />
 		<TaskBar />

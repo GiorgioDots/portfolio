@@ -31,5 +31,5 @@ html {
 }
 
 body {
-	@apply h-full;
+	@apply h-dvh;
 }
