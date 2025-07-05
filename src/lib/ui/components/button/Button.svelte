@@ -1,22 +1,28 @@
 <script lang="ts">
 	import type { HTMLButtonAttributes } from 'svelte/elements';
-	interface HTMLButtonAttributesWithActive extends HTMLButtonAttributes {
-		active?: boolean;
-		ref?: HTMLButtonElement
-	}
+	import type { WithElementRef } from '../utils';
 
-	let { active = $bindable(false), ref = $bindable(undefined), ...props }: HTMLButtonAttributesWithActive = $props();
+	let active = $state(false);
+	let { ref = $bindable(undefined), ...props }: WithElementRef<HTMLButtonAttributes> = $props();
 </script>
 
 <button
 	bind:this={ref}
 	class="btn btn-border relative flex items-center"
-	{...props}
 	class:btn-border-active={active}
-	onclick={(e) => {
-		active = !active;
-		props.onclick?.(e);
+	onmousedown={(e) => {
+		active = true;
+		props.onmousedown?.(e);
 	}}
+	onmouseup={(e) => {
+		active = false;
+		props.onmouseup?.(e);
+	}}
+	onmouseleave={(e) => {
+		active = false;
+		props.onmouseleave?.(e);
+	}}
+	{...props}
 >
 	<span class="btn-inner">
 		{@render props.children?.()}
