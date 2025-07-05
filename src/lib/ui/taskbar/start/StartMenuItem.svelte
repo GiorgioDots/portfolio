@@ -1,6 +1,5 @@
 <script lang="ts">
-	import { m } from '$lib/paraglide/messages';
-	import type { HTMLAnchorAttributes, HTMLButtonAttributes } from 'svelte/elements';
+	import type { HTMLButtonAttributes } from 'svelte/elements';
 	export type StartMenuItemProps = HTMLButtonAttributes & {
 		icon: string;
 		iconAlt: string;

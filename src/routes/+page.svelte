@@ -1,5 +1,6 @@
 <script>
 	import { appState } from '$lib/stores/app-store.svelte';
+	import { modalsStore, setAllInactive } from '$lib/stores/modal-store.svelte';
 	import Desktop from '$lib/ui/desktop/Desktop.svelte';
 	import LoadingScreen from '$lib/ui/loading/LoadingScreen.svelte';
 	import TaskBar from '$lib/ui/taskbar/Taskbar.svelte';
@@ -33,7 +34,12 @@
 	});
 </script>
 
-<div class={cn('flex h-dvh flex-col', appLoaded && !isShuttedDown ? 'bg-w95-bg' : 'bg-black')}>
+<!-- svelte-ignore a11y_click_events_have_key_events -->
+<!-- svelte-ignore a11y_no_static_element_interactions -->
+<div
+	class={cn('flex h-dvh flex-col', appLoaded && !isShuttedDown ? 'bg-w95-bg' : 'bg-black')}
+	onclick={() => setAllInactive()}
+>
 	{#if appLoaded && !isShuttedDown}
 		<Desktop />
 		<TaskBar />

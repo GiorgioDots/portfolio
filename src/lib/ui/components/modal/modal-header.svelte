@@ -2,6 +2,7 @@
 	import type { HTMLAttributes } from 'svelte/elements';
 	import type { WithElementRef } from '../utils';
 	import { cn } from '$lib/utils/cn';
+	import Button from '../button/Button.svelte';
 
 	type ModalHeaderButtonState = {
 		visible?: boolean;
@@ -13,12 +14,14 @@
 		maximizeBtn: ModalHeaderButtonState;
 		closeBtn: ModalHeaderButtonState;
 		iconSrc: string;
+		active: boolean;
 	};
 
 	let {
 		ref = $bindable(null),
 		class: className,
 		children,
+		active,
 		...restProps
 	}: WithElementRef<HTMLAttributes<HTMLDivElement>> & ModalHeaderProps = $props();
 </script>
@@ -26,8 +29,24 @@
 <div
 	bind:this={ref}
 	data-slot="card"
-	class={cn('bg-w95-title-active px-0.5 text-white', className)}
+	class={cn(
+		'px-0.5 ',
+		active ? 'bg-w95-title-active' : 'bg-w95-title-inactive',
+		className
+	)}
 	{...restProps}
 >
-	{@render children?.()}
+	<div class="flex">
+		<span>
+			ICON
+		</span>
+		<span class="grow truncate text-white">
+			{@render children?.()}
+		</span>
+		<span class="inline-flex">
+			<Button>_</Button>
+			<Button>Q</Button>
+			<Button>X</Button>
+		</span>
+	</div>
 </div>

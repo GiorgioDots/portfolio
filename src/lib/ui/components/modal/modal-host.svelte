@@ -6,7 +6,7 @@
 	<div
 		class="absolute"
 		draggable="true"
-		style:z-index={modal.isTop ? '999' : `${100 + $modalsStore.activeModals.indexOf(modal)}`}
+		style:z-index={modal.props.active ? '999' : `${100 + $modalsStore.activeModals.indexOf(modal)}`}
 	>
 		<modal.component {...modal.props}></modal.component>
 	</div>
