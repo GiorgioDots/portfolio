@@ -24,7 +24,7 @@
 </button>
 
 <style>
-	@reference '../../../app.css';
+	@reference '../../../../app.css';
 	.btn {
 		@apply bg-w95-gray-500 p-[2px] leading-4 font-bold outline-none;
 	}

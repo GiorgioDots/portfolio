@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Button from '../../interaction/Button.svelte';
+	import Button from '../../components/button/Button.svelte';
 	import { m } from '$lib/paraglide/messages.js';
 	import TaskbarStartMenu from './TaskbarStartMenu.svelte';
 

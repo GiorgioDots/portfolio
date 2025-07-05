@@ -1,6 +1,6 @@
 <script>
 	import { appState } from '$lib/stores/app-store.svelte';
-	import Desktop from '$lib/ui/Desktop.svelte';
+	import Desktop from '$lib/ui/desktop/Desktop.svelte';
 	import LoadingScreen from '$lib/ui/loading/LoadingScreen.svelte';
 	import TaskBar from '$lib/ui/taskbar/Taskbar.svelte';
 	import { cn } from '$lib/utils/cn';
@@ -12,8 +12,9 @@
 	$effect(() => {
 		const lastTimeStarted = localStorage.getItem('last_access');
 		if (lastTimeStarted == null) return;
-		if (new Date().getTime() - +lastTimeStarted < 1000 * 60 * 1) {
+		if (new Date().getTime() - +lastTimeStarted < 1000 * 60 * 60 * 1) {
 			appLoaded = true;
+			appState.alreadyLoaded = true;
 		}
 	});
 	$effect(() => {
